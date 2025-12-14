@@ -1,19 +1,23 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror 
 
-SRC =  srcs/main.c 						\
+SRC =  srcs/main.c 			     \
        srcs/libft_utils/libft_utils_2.c  \
-       srcs/libft_utils/libft_utils.c 	  \
+       srcs/libft_utils/libft_utils.c 	\
        srcs/operations/operations_utils.c  \
-       srcs/operations/push_ops.c 			\
-       srcs/operations/rotate_ops.c 		 \
-       srcs/operations/rrr.c 				  \
-       srcs/operations/swap_ops.c 			   \
-       srcs/parsing/parse_args.c 				\
-       srcs/sorting/sort_small.c 				 \
-       srcs/sorting/sort_utils.c 				  \
-       srcs/stacks/stack_utils.c				   \
-	   srcs/stacks/stack_init.c
+       srcs/operations/push_ops.c           \
+       srcs/operations/rotate_ops.c     	   \
+       srcs/operations/rrr.c      	  	    \
+       srcs/operations/swap_ops.c      	     \
+       srcs/parsing/parse_args.c    	      \
+       srcs/sorting/sort_small.c 			\
+       srcs/sorting/sort_utils.c 		        \
+       srcs/stacks/stack_utils.c		         \
+	srcs/stacks/stack_init.c                     \
+       srcs/sorting/indexing.c                       \
+       srcs/sorting/chunk_sort.c                      \
+       srcs/sorting/chunk_utils.c                      \
+       srcs/sorting/utils.c                             \
 
 
 OBJ = $(SRC:.c=.o)

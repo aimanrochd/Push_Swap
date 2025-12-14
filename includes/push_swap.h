@@ -86,5 +86,13 @@ void	small_sort(t_stack *a, t_stack *b);
 void	ft_sort_three(t_stack *a);
 void	ft_sort_four(t_stack *a, t_stack *b);
 void	ft_sort_five(t_stack *a, t_stack *b);
+void	assign_indexes(t_stack *stack);
+int		get_chunk_size(int stack_size);
+int		find_max_index_position(t_stack *stack);
+int		is_in_chunk(int index, int chunk_min, int chunk_max);
+int		has_chunk_numbers(t_stack *a, int chunk_min, int chunk_max);
+void	chunk_sort(t_stack *a, t_stack *b);
+int		distance_to_chunk_top(t_stack *a, int min, int max);
+int		distance_to_chunk_bottom(t_stack *a, int min, int max);
 
 #endif
