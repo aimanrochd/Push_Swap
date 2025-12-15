@@ -49,17 +49,3 @@ int	is_in_chunk(int index, int chunk_min, int chunk_max)
 {
 	return (index >= chunk_min && index <= chunk_max);
 }
-
-int	has_chunk_numbers(t_stack *a, int chunk_min, int chunk_max)
-{
-	t_node	*current;
-
-	current = a->head;
-	while (current)
-	{
-		if (is_in_chunk(current->index, chunk_min, chunk_max))
-			return (1);
-		current = current->next;
-	}
-	return (0);
-}

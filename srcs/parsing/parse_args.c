@@ -12,20 +12,20 @@
 
 #include "../../includes/push_swap.h"
 
-char	*ft_strjoin_free(char *s1, char *s2)
+char *ft_strjoin_free(char *s1, char *s2)
 {
-	char	*result;
+	char *result;
 
 	result = ft_strjoin(s1, s2);
 	free(s1);
 	return (result);
 }
 
-char	**collect_args(int ac, char **av, int *counter)
+char **collect_args(int ac, char **av, int *counter)
 {
-	char	**args;
-	char	*joined;
-	int		i;
+	char **args;
+	char *joined;
+	int i;
 
 	if (ac < 2 || !av || !counter)
 		return (*counter = 0, NULL);
@@ -50,12 +50,12 @@ char	**collect_args(int ac, char **av, int *counter)
 	return (args);
 }
 
-void	free_args(char **args)
+void free_args(char **args)
 {
-	int		i;
+	int i;
 
 	if (!args)
-		return ;
+		return;
 	i = 0;
 	while (args[i])
 	{
@@ -65,38 +65,40 @@ void	free_args(char **args)
 	free(args);
 }
 
-int	valide_nbrs(char **args)
+int valide_nbrs(char **args)
 {
-	int		i;
-	int		j;
+	int i;
+	int j;
+	long nb;
 
 	i = 0;
 	while (args[i])
 	{
 		j = 0;
-		if (!args[i] || !args[i][0])
+		if (!args[i][j])
 			return (0);
 		if (args[i][j] == '-' || args[i][j] == '+')
 			j++;
 		if (!args[i][j])
 			return (0);
 		while (args[i][j])
-		{
-			if (!(args[i][j] >= '0' && args[i][j] <= '9'))
+			if (args[i][j] < '0' || args[i][j] > '9')
 				return (0);
-			j++;
-		}
-		i++;
+			else
+				j++;
+		nb = ft_atoi(args[i++]);
+		if (nb > 2147483647 || nb < -2147483648)
+			return (0);
 	}
 	return (1);
 }
 
-int	dupchecks(char **args)
+int dupchecks(char **args)
 {
-	int		i;
-	int		j;
-	long	nb1;
-	long	nb2;
+	int i;
+	int j;
+	long nb1;
+	long nb2;
 
 	i = 0;
 	while (args[i])

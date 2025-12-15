@@ -1,7 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror 
 
-SRC =  srcs/main.c 			     \
+SRC =  srcs/push_swap.c 			     \
        srcs/libft_utils/libft_utils_2.c  \
        srcs/libft_utils/libft_utils.c 	\
        srcs/operations/operations_utils.c  \
@@ -17,7 +17,6 @@ SRC =  srcs/main.c 			     \
        srcs/sorting/indexing.c                       \
        srcs/sorting/chunk_sort.c                      \
        srcs/sorting/chunk_utils.c                      \
-       srcs/sorting/utils.c                             \
 
 
 OBJ = $(SRC:.c=.o)

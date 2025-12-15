@@ -46,7 +46,7 @@ static	t_stack	*init_stacks(int ac, char **av, t_stack **stack_b)
 
 	count = 0;
 	args = collect_args(ac, av, &count);
-	if (!args)
+	if (!args || count == 0)
 		error_exit(NULL, NULL, NULL);
 	if (!valide_nbrs(args) || dupchecks(args))
 		error_exit(args, NULL, NULL);
