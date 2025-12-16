@@ -20,9 +20,9 @@ t_node	*new_node(int value)
 	if (!node)
 		return (NULL);
 	node->value = value;
-	node->index = -1;
 	node->next = NULL;
 	node->prev = NULL;
+	node->index = -1;
 	return (node);
 }
 

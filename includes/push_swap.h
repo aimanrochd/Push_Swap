@@ -56,9 +56,6 @@ t_stack	*stack_init(char **args, int count);
 
 void	stack_free(t_stack *stack);
 int		is_sorted(t_stack *stack);
-int		find_min(t_stack *stack);
-int		find_max(t_stack *stack);
-t_node	*stack_peek(t_stack *stack);
 
 // Operations Utils
 t_node	*stack_remove_front(t_stack *stack);
@@ -90,9 +87,6 @@ void	assign_indexes(t_stack *stack);
 int		get_chunk_size(int stack_size);
 int		find_max_index_position(t_stack *stack);
 int		is_in_chunk(int index, int chunk_min, int chunk_max);
-int		has_chunk_numbers(t_stack *a, int chunk_min, int chunk_max);
 void	chunk_sort(t_stack *a, t_stack *b);
-int		distance_to_chunk_top(t_stack *a, int min, int max);
-int		distance_to_chunk_bottom(t_stack *a, int min, int max);
 
 #endif

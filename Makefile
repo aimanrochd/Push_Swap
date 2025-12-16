@@ -1,7 +1,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror 
 
-SRC =  srcs/push_swap.c 			     \
+SRC =  srcs/push_swap.c 		     \
        srcs/libft_utils/libft_utils_2.c  \
        srcs/libft_utils/libft_utils.c 	\
        srcs/operations/operations_utils.c  \

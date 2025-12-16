@@ -22,8 +22,10 @@ static	void	move_largest_to_top(t_stack *b)
 	if (max_pos == 0)
 		return ;
 	if (max_pos <= size / 2)
+	{
 		while (max_pos-- > 0)
 			rb(b);
+	}
 	else
 		while (max_pos++ < size)
 			rrb(b);
