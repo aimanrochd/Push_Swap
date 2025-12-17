@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <string.h>
 
 typedef struct s_node
 {
@@ -88,5 +89,9 @@ int		calc_chunk_size(int stack_size);
 int		find_max_index_position(t_stack *stack);
 int		is_in_chunk(int index, int chunk_min, int chunk_max);
 void	chunking_sort(t_stack *a, t_stack *b);
+
+// Bonus Functions
+int     execute(char *line, t_stack *a, t_stack *b);
+
 
 #endif

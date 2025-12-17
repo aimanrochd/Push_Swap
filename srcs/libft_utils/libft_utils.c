@@ -21,7 +21,7 @@ long	ft_atoi(const char *str)
 	result = 0;
 	sign = 1;
 	i = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32) // to check
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
@@ -29,7 +29,7 @@ long	ft_atoi(const char *str)
 			sign = -1;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i] >= '0' && str[i] <= '9') // to check
 	{
 		result = result * 10 + (str[i] - '0');
 		i++;
@@ -42,7 +42,7 @@ size_t	count_words(const char *s, char c)
 	size_t	i;
 	size_t	nbr;
 
-	if (!s)
+	if (!s)// to check
 		return (0);
 	i = 0;
 	nbr = 0;

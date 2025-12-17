@@ -18,6 +18,8 @@ SRC =  srcs/push_swap.c 		     \
        srcs/sorting/chunk_sort.c                      \
        srcs/sorting/chunk_utils.c                      \
 
+SRC_BONUS = bonus_srcs/bonus_utils.c                     \
+              
 
 OBJ = $(SRC:.c=.o)
 

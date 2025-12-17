@@ -33,8 +33,8 @@ int	is_sorted(t_stack *stack)
 {
 	t_node	*node;
 
-	if (!stack || !stack->head)
-		return (0);
+	// if (!stack || !stack->head)
+	// 	return (0);
 	node = stack->head;
 	while (node && node->next)
 	{
