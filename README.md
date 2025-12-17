@@ -1,6 +1,6 @@
-This project has been created as part of the 42 curriculum by <arochd>
+This project has been created as part of the 42 curriculum by arochd
 
-# PUSH_SWAP
+# Push_Swap
 
 ## Description
 
