@@ -41,3 +41,21 @@ make
 ```
 
     The output will be a list of operations to sort tthe numbers. If you pass a sorted list, the program prints nothing.
+
+#### Notes
+    - Only integers within standard C int limits (`-2147483648` to `2147483647`) are accepted .
+    - Duplicate numbers  aren't allowed.
+    - Invalid input will be handled with an error message.
+
+## Resources
+
+    - [Introduction to Stacks](https://www.geeksforgeeks.org/stack-data-structure/)
+    - [Big O Notation Cheat Sheet](https://www.bigocheatsheet.com/)
+    - [Sorting Algorithms Overview](https://visualgo.net/en)
+
+### How I used AI
+
+    I used ChatGPT :
+        - To clarify some edge cases about stack manipulation
+        - For advice and examples when writing this README
+    
