@@ -114,10 +114,10 @@ int	dups_spotter(char **args)
 			if (num2 > 2147483647 || num2 < -2147483648) // no need
 				return (0);
 			if (num2 == num1)
-				return (1);
+				return (0);
 			k++;
 		}
 		i++;
 	}
-	return (0);
+	return (1);
 }

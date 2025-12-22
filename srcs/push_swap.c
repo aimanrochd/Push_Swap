@@ -37,8 +37,8 @@ void	choose_sort(t_stack *a, t_stack *b)
 	else
 		chunking_sort(a, b);
 }
-#include <stdio.h>
-static	t_stack	*init_stacks(int ac, char **av, t_stack **stack_b)
+
+t_stack	*init_stacks(int ac, char **av, t_stack **stack_b)
 {
 	char	**args;
 	int		count;
@@ -46,10 +46,9 @@ static	t_stack	*init_stacks(int ac, char **av, t_stack **stack_b)
 
 	count = 0;
 	args = collect_arguments(ac, av, &count);
-	dprintf(2, "-----------%d-----\n", count);
 	if (!args || count == 0)
 		error_exit(NULL, NULL, NULL);
-	if (!numeric_checker(args) || dups_spotter(args))
+	if (!numeric_checker(args) || !dups_spotter(args))
 		error_exit(args, NULL, NULL);
 	stack_a = build_stack(args, count);
 	*stack_b = create_stack();
@@ -67,7 +66,7 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (0);
 	stack_a = init_stacks(ac, av, &stack_b);
-	if (!stack_a || !stack_a->head) // has been added
+	if (!stack_a || !stack_a->head)
 		return (0);
 	if (!is_sorted(stack_a))
 		choose_sort(stack_a, stack_b);

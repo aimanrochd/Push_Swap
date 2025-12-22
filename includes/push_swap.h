@@ -80,7 +80,7 @@ int		smallest_location(t_stack *a);
 void	push_min_to_b(t_stack *a, t_stack *b);
 
 // Sorting functions
-void	small_sort(t_stack *a, t_stack *b);
+// void	small_sort(t_stack *a, t_stack *b);
 void	sort_three_items(t_stack *a);
 void	sort_four_items(t_stack *a, t_stack *b);
 void	sort_five_items(t_stack *a, t_stack *b);
@@ -91,7 +91,21 @@ int		is_in_chunk(int index, int chunk_min, int chunk_max);
 void	chunking_sort(t_stack *a, t_stack *b);
 
 // Bonus Functions
-int     execute(char *line, t_stack *a, t_stack *b);
-
+int		execute(char *line, t_stack *a, t_stack *b);
+int		ft_strcmp(const char *s1, const char *s2);
+t_stack	*error_stack(void);
+int	is_all_whitespace(char *str);
+void	free_stacks(t_stack *a, t_stack *b);
+void	sa_s(t_stack *stack_a);
+void	sb_s(t_stack *stack_b);
+void	ss_s(t_stack *stack_a, t_stack *stack_b);
+void	pa_s(t_stack *stack_a, t_stack *stack_b);
+void	pb_s(t_stack *stack_a, t_stack *stack_b);
+void	ra_s(t_stack *stack_a);
+void	rb_s(t_stack *stack_b);
+void	rr_s(t_stack *stack_a, t_stack *stack_b);
+void	rra_s(t_stack *stack_a);
+void	rrb_s(t_stack *stack_b);
+void	rrr_s(t_stack *stack_a, t_stack *stack_b);
 
 #endif

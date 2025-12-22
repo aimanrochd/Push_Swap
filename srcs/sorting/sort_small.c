@@ -56,20 +56,3 @@ void	sort_five_items(t_stack *a, t_stack *b)
 	pa(a, b);
 	pa(a, b);
 }
-
-// void	small_sort(t_stack *a, t_stack *b)
-// {
-// 	if (is_sorted(a))
-// 		return ;
-// 	if (a->size == 2)
-// 	{
-// 		if (a->head->value > a->head->next->value)
-// 			sa(a);
-// 	}
-// 	else if (a->size == 3)
-// 		sort_three_items(a);
-// 	else if (a->size == 4)
-// 		sort_four_items(a, b);
-// 	else if (a->size == 5)
-// 		sort_five_items(a, b);
-// }
