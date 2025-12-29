@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <string.h>
 
 typedef struct s_node
 {
@@ -28,7 +27,7 @@ typedef struct s_node
 typedef struct s_stack
 {
 	t_node	*head;
-	t_node	*tail; 
+	t_node	*tail;
 	int		size;
 }	t_stack;
 
@@ -53,7 +52,7 @@ t_node	*create_node(int value);
 t_stack	*create_stack(void);
 void	add_to_top(t_stack *stack, t_node *node);
 void	add_to_bottom(t_stack *stack, t_node *node);
-t_stack	*build_stack(char **args, int count);
+t_stack	*build_stack(char **args);
 
 void	cleanup_stack(t_stack *stack);
 int		is_sorted(t_stack *stack);
@@ -80,21 +79,20 @@ int		smallest_location(t_stack *a);
 void	push_min_to_b(t_stack *a, t_stack *b);
 
 // Sorting functions
-// void	small_sort(t_stack *a, t_stack *b);
 void	sort_three_items(t_stack *a);
 void	sort_four_items(t_stack *a, t_stack *b);
 void	sort_five_items(t_stack *a, t_stack *b);
 void	index_stack_nodes(t_stack *stack);
 int		calc_chunk_size(int stack_size);
-int		find_max_index_position(t_stack *stack);
-int		is_in_chunk(int index, int chunk_min, int chunk_max);
 void	chunking_sort(t_stack *a, t_stack *b);
+void	bring_target_top(t_stack *b, int pos);
+int		get_pos_by_index(t_stack *stack, int target_index);
 
 // Bonus Functions
 int		execute(char *line, t_stack *a, t_stack *b);
 int		ft_strcmp(const char *s1, const char *s2);
 t_stack	*error_stack(void);
-int	is_all_whitespace(char *str);
+int		is_all_whitespace(char *str);
 void	free_stacks(t_stack *a, t_stack *b);
 void	sa_s(t_stack *stack_a);
 void	sb_s(t_stack *stack_b);

@@ -21,9 +21,7 @@ void	sort_three_items(t_stack *a)
 	top = a->head->value;
 	mid = a->head->next->value;
 	bottom = a->head->next->next->value;
-	if (top < mid && mid < bottom)
-		return ; // no need
-	else if (top < mid && mid > bottom && top < bottom)
+	if (top < mid && mid > bottom && top < bottom)
 	{
 		sa(a);
 		ra(a);

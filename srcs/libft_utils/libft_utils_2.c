@@ -6,7 +6,7 @@
 /*   By: arochd <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 10:30:11 by arochd            #+#    #+#             */
-/*   Updated: 2025/12/11 10:30:13 by arochd           ###   ########.fr       */
+/*   Updated: 2025/12/29 12:57:15 by arochd           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,17 +77,13 @@ size_t	ft_strlen(const char *str)
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t				i;
-	char				*destination;
-	char				*source;
+	size_t	i;
+	char	*destination;
+	char	*source;
 
-	i = 0;
-	if ((!dest && !src) && n > 0)
+	if (!dest && !src)
 		return (NULL);
-	if (n == 0)
-		return (dest);
-	if (dest == src)
-		return (dest);
+	i = 0;
 	destination = (char *)dest;
 	source = (char *)src;
 	while (i < n)
@@ -104,6 +100,8 @@ char	*ft_strdup(const char *s)
 	size_t	len;
 	char	*duplicated;
 
+	if (!s)
+		return (NULL);
 	len = ft_strlen(s);
 	duplicated = malloc((len + 1) * sizeof(char));
 	if (!duplicated)

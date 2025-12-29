@@ -75,7 +75,7 @@ void	add_to_bottom(t_stack *stack, t_node *node)
 	stack->size++;
 }
 
-t_stack	*build_stack(char **args, int count)
+t_stack	*build_stack(char **args)
 {
 	t_stack	*stack;
 	t_node	*node;
@@ -85,7 +85,7 @@ t_stack	*build_stack(char **args, int count)
 	if (!stack)
 		return (NULL);
 	i = 0;
-	while (i < count)// you can use args[i]
+	while (args[i])
 	{
 		node = create_node(ft_atoi(args[i]));
 		if (!node)

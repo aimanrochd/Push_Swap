@@ -54,7 +54,7 @@ int	execute(char *line, t_stack *a, t_stack *b)
 	else if (ft_strcmp(line, "ss\n") == 0)
 		ss(a, b);
 	else
-		return (-1);
+		return (0);
 	return (1);
 }
 
@@ -73,7 +73,7 @@ t_stack	*init_stacks_bonus(int ac, char **av, t_stack **b)
 		clear_args(args);
 		return (error_stack());
 	}
-	a = build_stack(args, count);
+	a = build_stack(args);
 	*b = create_stack();
 	clear_args(args);
 	if (!a || !*b)
@@ -93,7 +93,7 @@ int	main(int ac, char **av)
 	line = get_next_line(0);
 	while (line)
 	{
-		if (!execute(line, a, b))
+		if (execute(line, a, b) == 0)
 		{
 			free(line);
 			free_stacks(a, b);

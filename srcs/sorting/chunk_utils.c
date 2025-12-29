@@ -15,37 +15,42 @@
 int	calc_chunk_size(int size)
 {
 	if (size <= 100)
-		return (18);
-	if (size <= 500)
-		return (size / 12);
-	return (size / 13);
+		return (16);
+	return (32);
 }
 
-int	find_max_index_position(t_stack *stack)
+void	bring_target_top(t_stack *b, int pos)
+{
+	int	size;
+
+	size = b->size;
+	if (pos <= 0)
+		return ;
+	if (pos <= size / 2)
+	{
+		while (pos-- > 0)
+			rb(b);
+	}
+	else
+	{
+		while (pos++ < size)
+			rrb(b);
+	}
+}
+
+int	get_pos_by_index(t_stack *stack, int target_index)
 {
 	t_node	*node;
-	int		max_index;
-	int		max_index_pos;
 	int		pos;
 
 	node = stack->head;
-	max_index = node->index;
-	max_index_pos = 0;
 	pos = 0;
 	while (node)
 	{
-		if (node->index > max_index)
-		{
-			max_index = node->index;
-			max_index_pos = pos;
-		}
+		if (node->index == target_index)
+			return (pos);
 		node = node->next;
 		pos++;
 	}
-	return (max_index_pos);
-}
-
-int	is_in_chunk(int index, int min_val, int max_val)
-{
-	return (index >= min_val && index <= max_val);
+	return (-1);
 }

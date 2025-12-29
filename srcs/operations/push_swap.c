@@ -71,7 +71,7 @@ t_stack	*init_stacks(int ac, char **av, t_stack **stack_b)
 
 	count = 0;
 	args = collect_arguments(ac, av, &count);
-	if (!args || count == 0) //to check
+	if (!args || count == 0)
 		error_exit(NULL, NULL, NULL);
 	if (!numeric_checker(args) || !dups_spotter(args))
 		error_exit(args, NULL, NULL);

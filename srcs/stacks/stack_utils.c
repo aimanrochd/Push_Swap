@@ -17,7 +17,7 @@ void	cleanup_stack(t_stack *stack)
 	t_node	*node;
 	t_node	*temp;
 
-	if (!stack)
+	if (!stack) //  no need
 		return ;
 	node = stack->head;
 	while (node)
@@ -33,8 +33,6 @@ int	is_sorted(t_stack *stack)
 {
 	t_node	*node;
 
-	// if (!stack || !stack->head)
-	// 	return (0);
 	node = stack->head;
 	while (node && node->next)
 	{
