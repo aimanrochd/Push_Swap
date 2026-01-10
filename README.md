@@ -1,81 +1,121 @@
-push_swap
-📌 Description
+# push_swap
 
-push_swap is an algorithmic project from the 42 Network.
-The goal is to sort a list of integers using two stacks and a limited set of operations, while minimizing the number of moves.
+## 📌 Project Description
 
-The program prints the operations needed to sort the numbers in ascending order.
+**push_swap** is an algorithmic project from the **42 Network**.  
+The objective is to sort a list of integers in ascending order using **two stacks**
+(`a` and `b`) and a **restricted set of operations**, while producing the **smallest
+possible number of instructions**.
 
-🎯 Objectives
+The program outputs the list of operations needed to sort the numbers — **not the
+sorted result itself**.
 
-Sort integers in ascending order
+---
 
-Use only allowed operations
+## 🎯 Objectives
 
-Produce the smallest possible number of moves
+- Sort integers using stack operations only
+- Optimize the number of moves
+- Handle all invalid inputs safely
+- Follow the **42 Norm**
+- Avoid memory leaks and undefined behavior
 
-Handle errors correctly
+---
 
-Respect 42 Norm
+## 🧠 Project Rules
 
-🧠 How It Works
+- Stack **A** contains all numbers at start
+- Stack **B** is empty
+- Numbers must end sorted in **stack A**
+- Only allowed operations may be used
+- Each operation is printed on a new line
 
-Stack A contains all numbers at the start
+---
 
-Stack B is empty
+## ⚙️ Allowed Operations
 
-Numbers are sorted by moving elements between stacks using predefined operations
+| Operation | Description |
+|---------|-------------|
+| `sa` | Swap first two elements of stack A |
+| `sb` | Swap first two elements of stack B |
+| `ss` | `sa` and `sb` at the same time |
+| `pa` | Push top of B to A |
+| `pb` | Push top of A to B |
+| `ra` | Rotate stack A up |
+| `rb` | Rotate stack B up |
+| `rr` | `ra` and `rb` at the same time |
+| `rra` | Reverse rotate stack A |
+| `rrb` | Reverse rotate stack B |
+| `rrr` | `rra` and `rrb` at the same time |
 
-The program outputs the operations line by line
+---
 
-⚙️ Allowed Operations
-Operation	Description
-sa	swap the first two elements of stack A
-sb	swap the first two elements of stack B
-ss	sa and sb simultaneously
-pa	push the top of B onto A
-pb	push the top of A onto B
-ra	rotate stack A up
-rb	rotate stack B up
-rr	ra and rb simultaneously
-rra	reverse rotate stack A
-rrb	reverse rotate stack B
-rrr	rra and rrb simultaneously
-🖥️ Usage
-Compilation
+## 🚨 Error Handling
+
+The program prints **`Error\n`** and exits if:
+
+- An argument is **not a valid integer**
+- A number is outside the **INT_MIN / INT_MAX** range
+- There are **duplicate values**
+- Input is malformed (empty string, invalid signs, etc.)
+
+Example:
+```bash
+./push_swap 1 2 2
+Error
+
+## 🖥️ Usage
+
+### Compilation
+```bash
 make
 
 Execution
+```bash
 ./push_swap 4 67 3 87 23
 
-Output
+Output Example :
+
 pb
 ra
 sa
 pa
 
-🚫 Error Handling
+📊 Performance Targets
 
-The program prints Error and exits if:
+The goal is to stay within these limits during evaluation:
 
-Arguments are not integers
+Input Size	Maximum Moves
+100 numbers	≤ 700
+500 numbers	≤ 5500
 
-There are duplicate numbers
+🧪 Testing
+Random test (100 numbers)
+ARG=$(seq 1 100 | shuf | tr '\n' ' ')
+./push_swap $ARG | wc -l
 
-Input is invalid
+Random test (500 numbers)
+ARG=$(seq 1 500 | shuf | tr '\n' ' ')
+./push_swap $ARG | wc -l
 
-If the stack is already sorted, nothing is printed.
+Checker validation
+./push_swap $ARG | ./checker $ARG
+
+
+Expected output:
+
+OK
 
 🧩 Sorting Strategy
-Small inputs
+Small Inputs
 
-2 numbers → swap if needed
+2 elements → swap if needed
 
-3 numbers → optimized hardcoded cases
+3 elements → hardcoded logic
 
-5 numbers → push smallest values to stack B, sort, then push back
+5 elements → push smallest values to stack B, sort stack A, then push back
 
-Large inputs
+Large Inputs
 
 Assign each number an index (ranking)
 
@@ -83,28 +123,18 @@ Divide stack A into chunks
 
 Push chunks to stack B
 
-Push back to A in correct order
+Push back to stack A starting from the largest values
 
-📊 Performance Goals
-Input size	Expected operations
-100 numbers	< 700
-500 numbers	< 5500
-🧪 Testing
-Random test
-ARG=$(seq 1 100 | shuf | tr '\n' ' ')
-./push_swap $ARG | wc -l
+This strategy minimizes rotations and the total number of operations.
 
-Checker
-./push_swap $ARG | ./checker $ARG
-
-📁 Project Structure
+Project Structure  :
 push_swap/
 ├── Makefile
 ├── push_swap.c
 ├── includes/
 │   └── push_swap.h
 ├── parsing/
-│   └── parse_args.c
+│   └── parsing.c
 ├── operations/
 │   ├── swap.c
 │   ├── push.c
@@ -115,20 +145,18 @@ push_swap/
 │   └── sort_big.c
 └── utils/
     └── stack_utils.c
+🧠 Skills Learned
 
-🧠 Skills Developed
+Stack manipulation
 
 Algorithm optimization
 
-Stack-based sorting
-
-Time complexity analysis
-
-Memory management in C
+Time and space complexity
 
 Defensive programming
 
-✅ Author
+Memory management in C
 
-arochd
-42 Student – Push_swap Project
+Writing efficient parsing logic
+
+Debugging complex logic under constraints
